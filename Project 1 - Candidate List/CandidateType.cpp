@@ -3,7 +3,7 @@
 	Treglia, Andrew
 	Nguyen, Brian
 
-	November XX, 2020
+	November 23, 2020
 
 	CS A250
 	Project 1 (Part A) – Candidate List
@@ -29,6 +29,9 @@ numOfKingdoms(NUM_OF_KINGDOMS), kingdomVotes(new int[NUM_OF_KINGDOMS])
 
 CandidateType::CandidateType(const CandidateType& other) 
 {	
+	CharacterType::setCharacterInfo(other.getFirstName(), other.getLastName(),
+									other.getID());
+
 	numOfKingdoms = other.numOfKingdoms;
 	totalVotes = other.totalVotes;
 	kingdomVotes = new int[numOfKingdoms];
@@ -42,6 +45,8 @@ CandidateType& CandidateType::operator=(const CandidateType& rightSide)
 {
 	if (&rightSide != this)
 	{
+		CharacterType::setCharacterInfo(rightSide.getFirstName(),
+			rightSide.getLastName(), rightSide.getID());
 		if (numOfKingdoms != rightSide.numOfKingdoms)
 		{
 			delete [] kingdomVotes;
@@ -56,10 +61,11 @@ CandidateType& CandidateType::operator=(const CandidateType& rightSide)
 	}
 	else
 	{
-		cout << "copied itself";
+		cerr << "attempted assignment to itself";
 	}
 	return *this;
 }
+
 void CandidateType::updateVotesByKingdom(int idx, int amountKingdomVotes)
 {
 	kingdomVotes[idx] = amountKingdomVotes;
@@ -69,11 +75,13 @@ void CandidateType::updateVotesByKingdom(int idx, int amountKingdomVotes)
 		totalVotes += kingdomVotes[i];
 	}
 }
+
 // getTotalVotes
 int CandidateType::getTotalVotes() const
 {
 	return totalVotes;
 }
+
 // getVotesByKingdom
 int CandidateType::getVotesByKingdom(int idx) const 
 {
@@ -82,14 +90,14 @@ int CandidateType::getVotesByKingdom(int idx) const
 
 void CandidateType::printCandidateInfo() const
 {
-	printID();
+	CharacterType::printID();
 	cout << " - ";
-	printName();
+	CharacterType::printName();
 }
 
 void CandidateType::printCandidateTotalVotes() const 
 {
-	printName();
+	CharacterType::printName();
 	cout << "\n=>Total Votes (all kingdoms): " << totalVotes;
 }
 

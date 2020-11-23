@@ -3,7 +3,7 @@
 	Treglia, Andrew
 	Nguyen, Brian
 
-	November XX, 2020
+	November 23, 2020
 
 	CS A250
 	Project 1 (Part A) – Candidate List
@@ -16,7 +16,7 @@ using namespace std;
 // Implement all functions in the SAME order
 // as listed in the interface file.
 
-void CharacterType::setCharacterInfo(std::string fName, std::string lName, int newID)
+void CharacterType::setCharacterInfo(const std::string& fName, const std::string& lName, int newID)
 {
 	firstName = fName;
 	lastName = lName;

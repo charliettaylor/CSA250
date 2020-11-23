@@ -3,7 +3,7 @@
 	Treglia, Andrew
 	Nguyen, Brian
 
-	November XX, 2020
+	November 23, 2020
 
 	CS A250
 	Project 1 (Part A) – Candidate List

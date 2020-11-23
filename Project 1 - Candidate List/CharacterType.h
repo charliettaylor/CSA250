@@ -3,7 +3,7 @@
 	Treglia, Andrew
 	Nguyen, Brian
 
-	November XX, 2020
+	November 23, 2020
 
 	CS A250
 	Project 1 (Part A) – Candidate List
@@ -21,9 +21,9 @@ public:
 	// Default constructor
 	CharacterType() : id(0) {}
 	// Overloaded constructor
-	CharacterType(std::string fName, std::string lName, int idNum) : firstName(fName), lastName(lName), id(idNum) {}
+	CharacterType(const std::string& fName, const std::string& lName, int idNum) : firstName(fName), lastName(lName), id(idNum) {}
 	// setCharacterInfo
-	void setCharacterInfo(std::string fName, std::string lName, int newID);
+	void setCharacterInfo(const std::string& fName, const std::string& lName, int newID);
 	// getFirstName
 	std::string getFirstName() const;
 	// getLastName
